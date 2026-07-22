@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TRAIN-OF/train-of/schemas/train-route.schema.json",
+  "title": "TRAIN-OF route",
+  "type": "object",
+  "required": ["schema", "line_id", "cadence", "stations"],
+  "properties": {
+    "schema": {
+      "const": "train-of.route.v0"
+    },
+    "line_id": {
+      "type": "string"
+    },
+    "conductor": {
+      "type": "string",
+      "description": "Optional conductor identity path for conductor-driven lines."
+    },
+    "cadence": {
+      "type": "object",
+      "required": ["interval_minutes"],
+      "properties": {
+        "interval_minutes": { "type": "number", "exclusiveMinimum": 0 },
+        "cycle_minutes": { "type": "number", "exclusiveMinimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "arrival_policy": {
+      "enum": ["thin-event", "thin-event-with-cargo-key", "station-signage"]
+    },
+    "stations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["station_id", "role"],
+        "properties": {
+          "station_id": { "type": "string" },
+          "role": { "type": "string" },
+          "thread_id": { "type": ["string", "null"] },
+          "fallback_thread_id": { "type": ["string", "null"] }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
+
