@@ -14,28 +14,6 @@ DashBOrg dogfooding.
 - **Lightning flash**: direct cross-thread/cross-machine message outside the
   normal cadence for high-salience sync.
 
-## Conductor haecceity
-
-A train receipt may carry the conductor's current haecceity as a compact
-runtime envelope. Keep the stable card/deck/role signature separate from the
-context-window instance that happens to be driving this pulse:
-
-```json
-{
-  "stable_identity": "👽5♣️.📎4♦️.🔱4♥️/🚂🟥/CONDUCTOR/_/",
-  "instance_number": 14,
-  "compaction_count": 13,
-  "provenance": "Codex SessionStart compact hook"
-}
-```
-
-`instance_number` is one-indexed and historical: startup normally yields 1,
-resume preserves the current number, and compact advances it after the
-compaction boundary. It must never be folded into the stable card id. A thin
-arrival may carry this envelope directly or reference a durable receipt that
-contains it. When the hook cannot establish the value, use `null` and preserve
-the uncertainty rather than guessing.
-
 ## Conductor-driven vs station-driven lines
 
 Conductor-driven lines should keep automations thin and let the conductor resolve
@@ -85,3 +63,4 @@ Direct cross-machine messages are permitted for:
 
 Lightning messages should be explicit, signed, and rare. They supplement the slow
 wave; they do not replace station receipts or Project/PR truth.
+
