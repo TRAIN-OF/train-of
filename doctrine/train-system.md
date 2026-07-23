@@ -68,22 +68,6 @@ to substitute a fake station. The train records the occupied track and returns
 on the next cycle. A fallback thread may be used only when the route declares
 the primary unavailable and the fallback identity is disclosed.
 
-## Principal identity priority
-
-When a station has a real `🔱` principal, that principal is the first routing
-target. The conductor must sense and attempt the `🔱` station before contacting
-any `👽` sidecar or simulated persona. A sidecar can carry a receipt, provide
-an observation, or perform explicitly delegated work; it must not act *as* the
-unreachable principal or create a receipt under that principal's identity.
-
-If the real principal is unreachable for two consecutive scheduled visits (or
-the route's declared threshold), the conductor changes the stop's control mode
-to `station-controlled`. The station then owns its backlog and emits its own
-receipts until the principal is observed reachable again. This is a route-state
-transition, not permission to keep firing proxy prompts. The transition must
-record the principal identity, failed reachability observations, control-mode
-change, and restoration event.
-
 ## Conductor-driven vs station-driven lines
 
 Conductor-driven lines should keep automations thin and let the conductor resolve

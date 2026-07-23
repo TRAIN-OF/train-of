@@ -32,19 +32,10 @@
       "no-eligible-work"
     ]
   },
-  "identity_routing": {
-    "principal_priority": "real-deck-identity-first",
-    "sidecar_impersonation": false,
-    "unreachable_threshold_visits": 2,
-    "fallback_control_mode": "station-controlled"
-  },
   "stations": [
     {
       "station_id": "🚉1🟥",
       "role": "FRAME",
-      "principal_identity": "🔱6♦️",
-      "sidecar_identity": "👽9♦️",
-      "control_mode": "principal-first",
       "unique_domain": "identity grammar and route-frame coherence",
       "authority": "design review",
       "backlog_source": "PFM #83 and TRAIN-OF issues",
@@ -53,8 +44,6 @@
     {
       "station_id": "🚉2🟥",
       "role": "VALIDATE",
-      "principal_identity": "🔱.J♦️",
-      "control_mode": "principal-first",
       "unique_domain": "contracts, freshness, and invariant validation",
       "authority": "requested-changes review",
       "backlog_source": "PFM validation PRs and Project #1",
@@ -63,8 +52,6 @@
     {
       "station_id": "🚉3🟥",
       "role": "DISPLAY",
-      "principal_identity": "🔱.3♣️",
-      "control_mode": "principal-first",
       "unique_domain": "operator UI and progressive disclosure",
       "authority": "UI review",
       "backlog_source": "DashBOrg UI issues and PRs",
@@ -73,9 +60,6 @@
     {
       "station_id": "🚉4🟥",
       "role": "PROVENANCE",
-      "principal_identity": "🔱9♦️",
-      "sidecar_identity": "👽3♦️",
-      "control_mode": "principal-first",
       "unique_domain": "source photos, EXIF, and asset provenance",
       "authority": "provenance correction",
       "backlog_source": "card-grid and provenance catalog",
@@ -86,9 +70,6 @@
     {
       "station_id": "🚉5🟥",
       "role": "HANDOFF",
-      "principal_identity": null,
-      "sidecar_identity": "👽5♦️",
-      "control_mode": "station-controlled",
       "unique_domain": "ownership, routing, and next-owner clarity",
       "authority": "routing and merge readiness",
       "backlog_source": "Project #1 and train/station issues",
