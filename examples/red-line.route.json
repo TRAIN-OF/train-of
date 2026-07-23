@@ -2,6 +2,14 @@
   "schema": "train-of.route.v0",
   "line_id": "🚂🟥",
   "conductor": "👽5♣️.📎4♦️.🔱4♥️/🚂🟥/CONDUCTOR/_/",
+  "conductor_haecceity": {
+    "stable_identity": "👽5♣️.📎4♦️.🔱4♥️/🚂🟥/CONDUCTOR/_/",
+    "instance_number": 14,
+    "compaction_count": 13,
+    "session_id": "019f17e8-a3b0-7cc2-90c2-fa76750eede3",
+    "observed_at": "2026-07-23T05:35:00-07:00",
+    "provenance": "Codex SessionStart compact hook via skill-of/instance-identification"
+  },
   "cadence": {
     "interval_minutes": 24,
     "cycle_minutes": 120
@@ -32,4 +40,3 @@
     }
   ]
 }
-

@@ -15,6 +15,40 @@
       "type": "string",
       "description": "Optional conductor identity path for conductor-driven lines."
     },
+    "conductor_haecceity": {
+      "type": "object",
+      "description": "Runtime identity envelope for the conductor. Stable identity and per-instance lifecycle evidence are deliberately separate.",
+      "required": ["stable_identity"],
+      "properties": {
+        "stable_identity": {
+          "type": "string",
+          "description": "Stable card/deck/role identity; does not change at compaction."
+        },
+        "instance_number": {
+          "type": ["integer", "null"],
+          "minimum": 1,
+          "description": "One-indexed context-window instance observed by the harness. Historical on a receipt; null when unavailable."
+        },
+        "compaction_count": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Canonical compaction boundary count supporting instance_number."
+        },
+        "session_id": {
+          "type": ["string", "null"],
+          "description": "Optional local session grouping key; omit from public routes when privacy requires it."
+        },
+        "observed_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "provenance": {
+          "type": "string",
+          "description": "Evidence source, such as instance-identification SessionStart hook."
+        }
+      },
+      "additionalProperties": false
+    },
     "cadence": {
       "type": "object",
       "required": ["interval_minutes"],
@@ -45,4 +79,3 @@
   },
   "additionalProperties": true
 }
-
