@@ -18,7 +18,6 @@
   "station_service": {
     "visit_every_station": true,
     "claim_policy": "scan-and-claim",
-    "work_lanes": ["old-backlog", "new-offer"],
     "authority_scan_required": true,
     "no_fake_station_substitution": true,
     "allowed_outcomes": [
@@ -27,8 +26,6 @@
       "reviewed",
       "approved",
       "merged",
-      "offered",
-      "deferred",
       "blocked",
       "occupied",
       "unavailable",

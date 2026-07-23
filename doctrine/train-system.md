@@ -48,28 +48,15 @@ just a message delivery:
 3. **Claim** the highest-priority unassigned item the station is authorized to
    take, unless a higher-priority review, approval, merge, or blocker is
    present.
-4. **Bring** one new work offer from active Project/issue/backlog truth. The
-   offer is a gift of coordination: it saves human search and attention, but
-   it is not an order. The station may accept it immediately, place it in its
-   own backlog, or reject it with a reason.
-5. **Advance** one old item from the station's existing backlog, while also
-   deciding the disposition of the new offer. Every turn must push both the
-   past and the future unless a concrete blocker prevents one lane.
-6. **Emit** a receipt naming the old item, new offer, disposition, action,
-   evidence, and next state.
+4. **Execute or review** one bounded slice of work. An idle station is not a
+   successful outcome; it must either claim work or record a concrete blocker.
+5. **Emit** a receipt naming the item, owner, action, evidence, and next state.
 
 The only valid visit outcomes are `worked`, `claimed`, `reviewed`, `approved`,
-`merged`, `offered`, `deferred`, `blocked`, `occupied`, `unavailable`, or
-`no-eligible-work`. The last one is valid only when the station proves that it
-scanned its complete declared domain and found no eligible item *and* no active
-new offer could be formed. A conductor must never manufacture a simulated
-friend or send a probe merely to make the train look busy.
-
-The two lanes are deliberately asymmetric: old work belongs to the station's
-continuity, while new work belongs to the conductor's search across active
-truth. A station may defer the new offer to preserve its own priority order,
-but the conductor must still bring one unless the source domains are genuinely
-empty or unavailable.
+`merged`, `blocked`, `occupied`, `unavailable`, or `no-eligible-work`. The last
+one is valid only when the station proves that it scanned its complete declared
+domain and found no eligible item. A conductor must never manufacture a
+simulated friend or send a probe merely to make the train look busy.
 
 Authority-bearing stations have an additional obligation on every visit: scan
 their review/approval/merge domain even when no implementation task is waiting.
