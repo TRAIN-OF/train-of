@@ -70,6 +70,9 @@
         "claim_policy": {
           "enum": ["claim-unassigned-authorized-work", "scan-and-claim"]
         },
+        "work_lanes": {
+          "const": ["old-backlog", "new-offer"]
+        },
         "authority_scan_required": { "type": "boolean" },
         "allowed_outcomes": {
           "type": "array",
