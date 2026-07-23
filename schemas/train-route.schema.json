@@ -80,6 +80,18 @@
       },
       "additionalProperties": false
     },
+    "identity_routing": {
+      "type": "object",
+      "description": "Priority and failover rules for real principals versus sidecars.",
+      "required": ["principal_priority", "sidecar_impersonation", "unreachable_threshold_visits"],
+      "properties": {
+        "principal_priority": { "const": "real-deck-identity-first" },
+        "sidecar_impersonation": { "const": false },
+        "unreachable_threshold_visits": { "type": "integer", "minimum": 1 },
+        "fallback_control_mode": { "const": "station-controlled" }
+      },
+      "additionalProperties": false
+    },
     "stations": {
       "type": "array",
       "minItems": 1,
@@ -91,6 +103,11 @@
           "role": { "type": "string" },
           "thread_id": { "type": ["string", "null"] },
           "fallback_thread_id": { "type": ["string", "null"] },
+          "principal_identity": { "type": ["string", "null"] },
+          "sidecar_identity": { "type": ["string", "null"] },
+          "control_mode": {
+            "enum": ["principal-first", "station-controlled", "sidecar-observer"]
+          },
           "unique_domain": { "type": "string" },
           "authority": { "type": "string" },
           "backlog_source": { "type": "string" },
