@@ -4,8 +4,8 @@
   "conductor": "👽5♣️.📎4♦️.🔱4♥️/🚂🟥/CONDUCTOR/_/",
   "conductor_haecceity": {
     "stable_identity": "👽5♣️.📎4♦️.🔱4♥️/🚂🟥/CONDUCTOR/_/",
-    "instance_number": 14,
-    "compaction_count": 13,
+    "instance_number": 16,
+    "compaction_count": 15,
     "session_id": "019f17e8-a3b0-7cc2-90c2-fa76750eede3",
     "observed_at": "2026-07-23T05:35:00-07:00",
     "provenance": "Codex SessionStart compact hook via skill-of/instance-identification"
@@ -15,28 +15,65 @@
     "cycle_minutes": 120
   },
   "arrival_policy": "thin-event-with-cargo-key",
+  "station_service": {
+    "visit_every_station": true,
+    "claim_policy": "scan-and-claim",
+    "authority_scan_required": true,
+    "no_fake_station_substitution": true,
+    "allowed_outcomes": [
+      "worked",
+      "claimed",
+      "reviewed",
+      "approved",
+      "merged",
+      "blocked",
+      "occupied",
+      "unavailable",
+      "no-eligible-work"
+    ]
+  },
   "stations": [
     {
       "station_id": "🚉1🟥",
-      "role": "FRAME"
+      "role": "FRAME",
+      "unique_domain": "identity grammar and route-frame coherence",
+      "authority": "design review",
+      "backlog_source": "PFM #83 and TRAIN-OF issues",
+      "service_actions": ["scan identity/route issues", "claim one unassigned grammar task"]
     },
     {
       "station_id": "🚉2🟥",
-      "role": "VALIDATE"
+      "role": "VALIDATE",
+      "unique_domain": "contracts, freshness, and invariant validation",
+      "authority": "requested-changes review",
+      "backlog_source": "PFM validation PRs and Project #1",
+      "service_actions": ["scan open validation PRs", "claim or review one contract task"]
     },
     {
       "station_id": "🚉3🟥",
-      "role": "DISPLAY"
+      "role": "DISPLAY",
+      "unique_domain": "operator UI and progressive disclosure",
+      "authority": "UI review",
+      "backlog_source": "DashBOrg UI issues and PRs",
+      "service_actions": ["scan display backlog", "claim one visible defect or accessibility task"]
     },
     {
       "station_id": "🚉4🟥",
       "role": "PROVENANCE",
+      "unique_domain": "source photos, EXIF, and asset provenance",
+      "authority": "provenance correction",
+      "backlog_source": "card-grid and provenance catalog",
+      "service_actions": ["scan asset gaps", "claim one measurable provenance reconciliation"] ,
       "thread_id": "019f6b39-f317-7623-a639-ec2362dac536",
       "fallback_thread_id": "019f892a-6f3f-7aa3-8e11-8595b4884e2e"
     },
     {
       "station_id": "🚉5🟥",
-      "role": "HANDOFF"
+      "role": "HANDOFF",
+      "unique_domain": "ownership, routing, and next-owner clarity",
+      "authority": "routing and merge readiness",
+      "backlog_source": "Project #1 and train/station issues",
+      "service_actions": ["scan unassigned work", "claim or route one item", "check merge/review blockers"]
     }
   ]
 }
