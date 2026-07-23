@@ -61,25 +61,6 @@
     "arrival_policy": {
       "enum": ["thin-event", "thin-event-with-cargo-key", "station-signage"]
     },
-    "station_service": {
-      "type": "object",
-      "description": "Mandatory work-service contract applied at every station on every cycle.",
-      "required": ["visit_every_station", "claim_policy", "allowed_outcomes"],
-      "properties": {
-        "visit_every_station": { "const": true },
-        "claim_policy": {
-          "enum": ["claim-unassigned-authorized-work", "scan-and-claim"]
-        },
-        "authority_scan_required": { "type": "boolean" },
-        "allowed_outcomes": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 1
-        },
-        "no_fake_station_substitution": { "type": "boolean" }
-      },
-      "additionalProperties": false
-    },
     "stations": {
       "type": "array",
       "minItems": 1,
@@ -90,15 +71,7 @@
           "station_id": { "type": "string" },
           "role": { "type": "string" },
           "thread_id": { "type": ["string", "null"] },
-          "fallback_thread_id": { "type": ["string", "null"] },
-          "unique_domain": { "type": "string" },
-          "authority": { "type": "string" },
-          "backlog_source": { "type": "string" },
-          "service_actions": {
-            "type": "array",
-            "items": { "type": "string" },
-            "minItems": 1
-          }
+          "fallback_thread_id": { "type": ["string", "null"] }
         },
         "additionalProperties": true
       }

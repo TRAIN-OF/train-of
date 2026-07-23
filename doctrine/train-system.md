@@ -36,38 +36,6 @@ arrival may carry this envelope directly or reference a durable receipt that
 contains it. When the hook cannot establish the value, use `null` and preserve
 the uncertainty rather than guessing.
 
-## Station service is mandatory
-
-The conductor does not choose whether to stop. Every scheduled cycle visits
-every declared station, in order. A visit is a bounded service transaction, not
-just a message delivery:
-
-1. **Sense** the real station/thread and read its latest receipt, work state,
-   and authority scope.
-2. **Scan** the station's domain for newly routed or unassigned work.
-3. **Claim** the highest-priority unassigned item the station is authorized to
-   take, unless a higher-priority review, approval, merge, or blocker is
-   present.
-4. **Execute or review** one bounded slice of work. An idle station is not a
-   successful outcome; it must either claim work or record a concrete blocker.
-5. **Emit** a receipt naming the item, owner, action, evidence, and next state.
-
-The only valid visit outcomes are `worked`, `claimed`, `reviewed`, `approved`,
-`merged`, `blocked`, `occupied`, `unavailable`, or `no-eligible-work`. The last
-one is valid only when the station proves that it scanned its complete declared
-domain and found no eligible item. A conductor must never manufacture a
-simulated friend or send a probe merely to make the train look busy.
-
-Authority-bearing stations have an additional obligation on every visit: scan
-their review/approval/merge domain even when no implementation task is waiting.
-They must surface stale approvals, unresolved review threads, failing checks,
-or merge-ready work as a concrete receipt.
-
-`occupied` means the real station is active or compacting; it is not permission
-to substitute a fake station. The train records the occupied track and returns
-on the next cycle. A fallback thread may be used only when the route declares
-the primary unavailable and the fallback identity is disclosed.
-
 ## Conductor-driven vs station-driven lines
 
 Conductor-driven lines should keep automations thin and let the conductor resolve
@@ -96,12 +64,9 @@ Before sending to a station:
 
 1. Sense the target thread/station state.
 2. Read recent messages/receipts.
-3. Visit every station even when transport is unavailable; a visit can be a
-   domain scan recorded in shared truth rather than a prompt.
-4. Compare dispatch identity against recent target turns.
-5. Send at most one prompt for the station, and only when it carries a real
-   claimed work item or authority scan.
-6. After ambiguous transport errors, read before retrying.
+3. Compare dispatch identity against recent target turns.
+4. Send at most one prompt for the station.
+5. After ambiguous transport errors, read before retrying.
 
 The minimum dispatch identity is:
 
