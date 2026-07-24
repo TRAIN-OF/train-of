@@ -1,0 +1,35 @@
+{
+  "schema": "train-of.route.v0",
+  "line_id": "🚂🟥",
+  "conductor": "👽5♣️.📎4♦️.🔱4♥️/🚂🟥/CONDUCTOR/_/",
+  "cadence": {
+    "interval_minutes": 24,
+    "cycle_minutes": 120
+  },
+  "arrival_policy": "thin-event-with-cargo-key",
+  "stations": [
+    {
+      "station_id": "🚉1🟥",
+      "role": "FRAME"
+    },
+    {
+      "station_id": "🚉2🟥",
+      "role": "VALIDATE"
+    },
+    {
+      "station_id": "🚉3🟥",
+      "role": "DISPLAY"
+    },
+    {
+      "station_id": "🚉4🟥",
+      "role": "PROVENANCE",
+      "thread_id": "019f6b39-f317-7623-a639-ec2362dac536",
+      "fallback_thread_id": "019f892a-6f3f-7aa3-8e11-8595b4884e2e"
+    },
+    {
+      "station_id": "🚉5🟥",
+      "role": "HANDOFF"
+    }
+  ]
+}
+
