@@ -6,6 +6,18 @@ Class definition and SDK layer for `TRAIN-OF/*` repositories.
 handoff rules, conductor behavior, telemetry semantics, and the thin event pulses
 that wake trains without embedding stale policy in automation prompts.
 
+## Protocol version
+
+This repository defines `train-of.route.v2`, SemVer `2.0.0`. This is a
+breaking change: a station may not register on a route without a verified
+remote address and application-level ACK. Each station must publish its host,
+thread, machine, account, cwd, reply-to address, verification time, and
+transport evidence (nonce and ACK time). A local sidecar is a fallback, never
+a substitute for an unavailable principal.
+
+Older `v0` documents are not wire-compatible with v2. Migrate them by
+collecting and verifying every station address before publishing the route.
+
 ## Why this exists
 
 The first live train experiments showed a useful split:
@@ -56,4 +68,3 @@ examples/
 `TRAIN-OF/*` owns route behavior. `STATION-OF/*` owns station behavior. A train
 may visit a station role shared by multiple distinct agentic thread identities,
 but it must not cause one thread to impersonate another thread's haecceity/card.
-

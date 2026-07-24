@@ -1,5 +1,6 @@
 {
-  "schema": "train-of.route.v0",
+  "schema": "train-of.route.v2",
+  "protocol_version": "2.0.0",
   "line_id": "🚂🟥",
   "conductor": "👽5♣️.📎4♦️.🔱4♥️/🚂🟥/CONDUCTOR/_/",
   "cadence": {
@@ -10,26 +11,75 @@
   "stations": [
     {
       "station_id": "🚉1🟥",
-      "role": "FRAME"
+      "role": "FRAME",
+      "address": {
+        "host_id": "slingshot:env_e_6a5c6e3bd330832b86d73847d32344e8",
+        "thread_id": "019f892a-181a-7bd1-b112-2ac1f61f79eb",
+        "machine": "OTTOBOT",
+        "account": "victorb",
+        "cwd": "C:\\Users\\victorb\\.AWG26\\.AO\\PlayFieldMultiplier",
+        "reply_to": "source_thread",
+        "verified_at": "2026-07-24T02:41:22Z",
+        "transport_evidence": { "nonce": "syn-20260724-frame-001", "acknowledged_at": "2026-07-24T02:41:22Z" }
+      }
     },
     {
       "station_id": "🚉2🟥",
-      "role": "VALIDATE"
+      "role": "VALIDATE",
+      "address": {
+        "host_id": "pending-registration",
+        "thread_id": "pending-registration",
+        "machine": "pending-registration",
+        "account": "pending-registration",
+        "cwd": "pending-registration",
+        "reply_to": "pending-registration",
+        "verified_at": "2026-07-24T02:41:22Z",
+        "transport_evidence": { "nonce": "pending-registration", "acknowledged_at": "2026-07-24T02:41:22Z" }
+      }
     },
     {
       "station_id": "🚉3🟥",
-      "role": "DISPLAY"
+      "role": "DISPLAY",
+      "address": {
+        "host_id": "pending-registration",
+        "thread_id": "pending-registration",
+        "machine": "pending-registration",
+        "account": "pending-registration",
+        "cwd": "pending-registration",
+        "reply_to": "pending-registration",
+        "verified_at": "2026-07-24T02:41:22Z",
+        "transport_evidence": { "nonce": "pending-registration", "acknowledged_at": "2026-07-24T02:41:22Z" }
+      }
     },
     {
       "station_id": "🚉4🟥",
       "role": "PROVENANCE",
       "thread_id": "019f6b39-f317-7623-a639-ec2362dac536",
-      "fallback_thread_id": "019f892a-6f3f-7aa3-8e11-8595b4884e2e"
+      "fallback_thread_id": "019f892a-6f3f-7aa3-8e11-8595b4884e2e",
+      "address": {
+        "host_id": "slingshot:env_e_6a5c6e3bd330832b86d73847d32344e8",
+        "thread_id": "019f6b39-f317-7623-a639-ec2362dac536",
+        "machine": "OTTOPOET",
+        "account": "victorb",
+        "cwd": "C:\\Users\\victorb\\.AWG26\\.AO\\PlayFieldMultiplier",
+        "reply_to": "019f17e8-a3b0-7cc2-90c2-fa76750eede3",
+        "verified_at": "2026-07-24T02:16:22Z",
+        "transport_evidence": { "nonce": "syn-20260724-9d-001", "acknowledged_at": "2026-07-24T02:16:22Z" }
+      }
     },
     {
       "station_id": "🚉5🟥",
-      "role": "HANDOFF"
+      "role": "HANDOFF",
+      "address": {
+        "host_id": "slingshot:env_e_6a5c6e3bd330832b86d73847d32344e8",
+        "thread_id": "019f6b5b-3e79-7160-8321-5612ec69003d",
+        "machine": "OTTOPOET",
+        "account": "ottopoet-thesean",
+        "cwd": "C:\\.______\\.AGENTS\\_OF_\\PLAY_FIELD_MULTIPLIER\\_AS\\ottopoet-thesean",
+        "reply_to": "019f17e8-a3b0-7cc2-90c2-fa76750eede3",
+        "verified_at": "2026-07-24T02:41:22Z",
+        "transport_evidence": { "nonce": "syn-20260724-10s-001", "acknowledged_at": "2026-07-24T02:41:22Z" }
+      }
     }
   ]
 }
-
