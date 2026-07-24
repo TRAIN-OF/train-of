@@ -1,0 +1,56 @@
+{
+  "schema": "train-of.red_line_state.v1",
+  "state_authority": "committed-data",
+  "line_id": "🚂🟥",
+  "conductor": "👽5♣️.📎4♦️.🔱4♥️/🚂🟥/CONDUCTOR/_/",
+  "schedule": {
+    "started_at": "2026-07-22T09:58:24.523Z",
+    "interval_minutes": 24,
+    "station_order": ["station-red-1", "station-red-2", "station-red-3", "station-red-4", "station-red-5"]
+  },
+  "last_transition": {
+    "observed_at": "2026-07-24T03:05:23.432Z",
+    "tick_index": 103,
+    "completed_station_id": "station-red-3",
+    "completed_station_label": "🚉3🟥 DISPLAY",
+    "current_station_id": "station-red-4",
+    "current_station_label": "🚉4🟥 PROVENANCE",
+    "next_station_id": "station-red-5",
+    "next_station_label": "🚉5🟥 HANDOFF",
+    "source": "red-line-conductor-5-4-4 heartbeat",
+    "derivation": "floor((observed_at - schedule.started_at) / interval_minutes) modulo station_order.length, then advance once for the departure pulse"
+  },
+  "cargo": [
+    {
+      "work_id": "TRAIN-OF/train-of#1",
+      "kind": "pull_request",
+      "owner_station_id": "station-red-5",
+      "assignment": "Read the existing doctrine PR review state and route only actionable handoff work; do not overwrite this PR."
+    },
+    {
+      "work_id": "TRAIN-OF/train-of#3",
+      "kind": "pull_request",
+      "owner_station_id": "station-red-2",
+      "assignment": "Validate the isolated train-of.route.v2 SemVer contract and station-address requirements."
+    },
+    {
+      "work_id": "TRAIN-OF/train-of#4",
+      "kind": "issue",
+      "owner_station_id": "station-red-2",
+      "assignment": "Track v2 migration and reject route registration without verified remote address and ACK evidence."
+    },
+    {
+      "work_id": "SKILL-OF/instance-identification#1",
+      "kind": "pull_request",
+      "owner_station_id": "station-red-4",
+      "assignment": "Verify the PostCompact hook path fix and record the module-resolution provenance."
+    }
+  ],
+  "dispatch_policy": {
+    "real_principal_before_sidecar": true,
+    "every_station_each_cycle": true,
+    "work_required_at_arrival": true,
+    "chat_is_not_state_authority": true,
+    "no_guestbook_receipts": true
+  }
+}
