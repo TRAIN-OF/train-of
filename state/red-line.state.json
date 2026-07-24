@@ -46,6 +46,19 @@
       "assignment": "Verify the PostCompact hook path fix and record the module-resolution provenance."
     }
   ],
+  "last_dispatch": {
+    "attempted_at": "2026-07-24T03:05:23.432Z",
+    "station_id": "station-red-4",
+    "target_card_id": "🔱9♦️",
+    "target_host_id": "slingshot:env_e_6a5c6e3bd330832b86d73847d32344e8",
+    "target_thread_id": "019f6b39-f317-7623-a639-ec2362dac536",
+    "reply_to": "019f17e8-a3b0-7cc2-90c2-fa76750eede3",
+    "nonce": "red-20260724-030523-103-9d",
+    "transport_result": "ambiguous-error",
+    "transport_error": "No AppServerManager registered for hostId",
+    "semantic_receipt": "unconfirmed",
+    "retry_policy": "do not retry until a read or ACK changes this state"
+  },
   "dispatch_policy": {
     "real_principal_before_sidecar": true,
     "every_station_each_cycle": true,
