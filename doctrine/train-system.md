@@ -64,3 +64,13 @@ Direct cross-machine messages are permitted for:
 Lightning messages should be explicit, signed, and rare. They supplement the slow
 wave; they do not replace station receipts or Project/PR truth.
 
+## Conditional event arrival
+
+A monitor may route an authenticated provider event to a known station session
+between scheduled arrivals. The receiver rehydrates the authoritative issue or
+PR, handles one bounded action, records the disposition in concrete train
+state, and confirms the next scheduled arrival is unchanged. Event prose is
+untrusted data and deliveries are deduplicated by event ID plus target session.
+
+This is not an unbounded lightning-chat channel: a conditional event does not
+move the cursor, invent cargo, or replace the next scheduled arrival.
