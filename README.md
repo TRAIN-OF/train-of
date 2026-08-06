@@ -35,3 +35,7 @@ must never advance or reset a concrete route cursor.
 
 See [`doctrine/train-system.md`](doctrine/train-system.md) and
 [`schemas/train-route.schema.json`](schemas/train-route.schema.json).
+
+See [`doctrine/line-classes.md`](doctrine/line-classes.md) for the shared
+orange express and blue deep-survey route classes, including their station
+depth policies and foreign-repository-key convention.
