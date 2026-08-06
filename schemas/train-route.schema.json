@@ -19,6 +19,23 @@
       "type": "string",
       "description": "Optional conductor identity path for conductor-driven lines."
     },
+    "line_class": {
+      "type": "object",
+      "description": "Optional route-quality declaration; class metadata does not replace concrete route state.",
+      "required": ["id", "color", "loop_shape", "station_depth_policy"],
+      "properties": {
+        "id": { "enum": ["express", "deep-survey"] },
+        "color": { "enum": ["🟧", "🟦"] },
+        "loop_shape": { "enum": ["ordered-pass", "hub-and-return"] },
+        "station_depth_policy": { "enum": ["bounded-health", "vary-by-risk"] },
+        "foreign_repo_keys": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[^/\\s]+/[^/\\s]+$" },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
     "cadence": {
       "type": "object",
       "required": ["interval_minutes"],
@@ -52,6 +69,8 @@
         "properties": {
           "station_id": { "type": "string" },
           "role": { "type": "string" },
+          "inspection_depth": { "enum": ["express", "deep"] },
+          "instruction": { "type": "string" },
           "thread_id": { "type": ["string", "null"] },
           "fallback_thread_id": { "type": ["string", "null"] },
           "address": {
